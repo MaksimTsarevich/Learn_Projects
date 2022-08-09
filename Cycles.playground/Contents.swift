@@ -57,16 +57,26 @@ board[24] = -08
 var square = 0
 var diceRoll = 0
 
-while square < finalSquare{
+//while square < finalSquare{
+//    diceRoll += 1
+//    if diceRoll == 7{
+//        diceRoll = 1
+//    }
+//    square += diceRoll
+//    if square < board.count{
+//        square += board[square]
+//    }
+//}
+print("Game over")
+
+// repeate-while
+repeat{
+    square += board[square]
     diceRoll += 1
     if diceRoll == 7{
         diceRoll = 1
     }
     square += diceRoll
-    if square < board.count{
-        square += board[square]
-    }
-}
-print("Game over")
+} while square < finalSquare
+print("game over")
 
-// repeate-while
