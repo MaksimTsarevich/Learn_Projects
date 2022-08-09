@@ -74,4 +74,27 @@ default:
 }
 
 // Привязка значений
+let anotherPoint = (2, 0)
 
+switch anotherPoint {
+case (let x, 0):
+    print("x: \(x)")
+case(0, let y):
+    print("y: \(y)")
+case let (x, y):
+    print("\(x) , \(y)")
+}
+
+// Where
+let yetAnotherPoint = (1, -1)
+
+switch yetAnotherPoint {
+case let (x, y) where x == y:
+    print("\(x), \(y) x == y")
+case let (x, y) where x == -y:
+    print("\(x), \(y) x == -y")
+case let(x, y):
+    print("\(x), \(y) this some point")
+}
+
+// Операторы передачи управления
