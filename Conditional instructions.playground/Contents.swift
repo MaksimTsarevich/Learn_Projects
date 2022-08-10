@@ -98,3 +98,52 @@ case let(x, y):
 }
 
 // Операторы передачи управления
+// Continue
+let puzzleInput = "Hello world"
+var puzzleOutput = ""
+var charactersToRemove: [Character] = [ "a", "e", "o", "i", "u", " "]
+
+for character in puzzleInput{
+    if charactersToRemove.contains(character){
+        continue
+    } else {
+        puzzleOutput.append(character)
+    }
+}
+print(puzzleOutput)
+
+// Break
+let numberSymbol = "three"
+var valueInt: Int?
+
+switch numberSymbol{
+case "1", "one":
+    valueInt = 1
+case "2", "two":
+    valueInt = 2
+case "3", "three":
+    valueInt = 3
+default:
+    break
+}
+
+if let newValue = valueInt{
+    print("\(numberSymbol) it is \(newValue)")
+} else {
+    print("not be found symbol '\(numberSymbol)'")
+}
+
+// Fallthrough
+
+let integerToDesrcibe = 5
+var description = "Hello \(integerToDesrcibe)"
+
+switch integerToDesrcibe{
+case 1,2,3,4,5,6:
+    description += " World"
+    fallthrough
+default:
+    description += ", my name is"
+}
+
+print(description)
