@@ -53,19 +53,51 @@ printWithCount(string: "Hellow")
 
 // Функции возвращающие несколько значений
 
-func minMax (array:[Int]) -> (min: Int, max: Int){
+//func minMax (array:[Int]) -> (min: Int, max: Int){
+//    var currentMin = array[0]
+//    var currentMax = array[0]
+//
+//    for value in array[1..<array.count] {
+//        if value < currentMin{
+//            currentMin = value
+//        } else if value > currentMax {
+//            currentMax = value
+//        }
+//    }
+//    return (currentMin, currentMax)
+//}
+//
+//let bounts = minMax(array: [1, 3, -2, 5, 10])
+//print("\(bounts.min), \(bounts.max)")
+
+
+// Опциональный кортеж как возвращаемый тип
+
+func minMax(array: [Int]) -> (min: Int, max: Int)? {
+    if array.isEmpty{return nil}
+    
     var currentMin = array[0]
     var currentMax = array[0]
     
-    for value in array[1..<array.count] {
+    for value in array[1..<array.count]{
         if value < currentMin{
             currentMin = value
-        } else if value > currentMax {
+        } else if value > currentMax{
             currentMax = value
         }
     }
     return (currentMin, currentMax)
 }
 
-let bounts = minMax(array: [1, 3, -2, 5, 10])
-print("\(bounts.min), \(bounts.max)")
+if let bounts = minMax(array: [1]){
+    print("\(bounts.min), \(bounts.max)")
+}
+
+
+// Функции с неявным возвращаемым значением
+func greetingN (for person: String) -> String{
+    "hello, " + person
+}
+
+print(greetingN(for: "Ann"))
+
